@@ -1,0 +1,52 @@
+.nav{
+	grid-column-start: span 2;
+	display: flex;
+	height: 4rem;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--prim-bg-color);
+	border-bottom: 2px solid #363636;
+}
+.nav .child-1{
+	display: flex;
+	justify-content: left;
+	align-items: center;
+}
+.nav .child-2{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2rem;
+	margin-right: 2rem;
+}
+.nav .child-2 .fa-solid{
+	font-size: 2rem;
+	color: var(--second-txt-color);
+}
+#user-img{
+	height: 2.75rem;
+	width: 2.75rem;
+	border: 2px solid darkslategrey;
+	border-radius: 50%;
+	/* overflow: hidden; */
+	background-image: url('./../Static/user_img.png');
+}
+.child-1 .fa-list-check{
+	font-size: 2rem;
+    height: auto;
+    margin-left: 1.5rem;
+    color: var(--second-txt-color);
+    cursor: pointer;
+}
+.child-1 .fa-list-check:hover{
+	color: var(--prim-txt-color);
+	transition: 0.2s ease-in-out;
+}
+#Event_name {
+    margin-left: 2rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: lavender;
+    padding-right: 2rem;
+}
