@@ -3,16 +3,16 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Overseer</title>
+	<title></title>
 	
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@900&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/8d8afb07ae.js" crossorigin="anonymous"></script>
 
-	<link rel="stylesheet" type="text/css" href="./Styles/style.css">
 	<link rel="stylesheet" type="text/css" href="./Styles/navigation.css">
 	<link rel="stylesheet" type="text/css" href="./Styles/main.css">
+	<link rel="stylesheet" type="text/css" href="./Styles/style.css">
 </head>
 <body class="">
 	<div class="nav">
@@ -26,12 +26,12 @@
 		</div>
 	</div>
 	<div class=" main">
-		<div class=" cam-container">
+		<div class="cam-container">
 			<img id="cameraFeed">
 			<div id="cameraFeed-options" class="">
 				<label>Time Remaining : 00:00:00 🕜</label>
-				<button onclick="start_scan()">Start Scan</button>
-				<!-- <button onclick="stop_scan()">Stop Scan</button> -->
+				<button id="scan-button" onclick="start_scan()">Start Scan</button>
+				<button id="stop-scan-button" onclick="stop_scan()" style="display: none;">Stop Scan</button>
 			</div>
 		</div>
 		<div class="stats-container">
@@ -54,18 +54,18 @@
 			</div>
 			
 			<div id="User-data">
-				<div id="User-img"><img src="./Static/user_img_success.svg"></div>
+				<div id="User-img"><img></div>
 				<div id="User-name">Aryan Marwaha</div>
 				<div id="User-group-type">Student</div>
 				
 				<div class="name">TICKET NO.</div>
-				<input disabled class="value" value="0000-0000-0000">
+				<input id="ticket" disabled class="value" value="0000-0000-0000">
 
 				<div class="name">EMAIL</div>
-				<input disabled class="value" value="aryanmarwaha78@gmail.com">
+				<input id="email" disabled class="value" value="aryanmarwaha78@gmail.com">
 
 				<div class="name">PHONE NO.</div>
-				<input disabled class="value" value="0000-0000-0000">
+				<input id="phone" disabled class="value" value="0000-0000-0000">
 			</div>
 			
 			<div id="Past-commits">
