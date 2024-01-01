@@ -17,7 +17,37 @@ body{
 .test{
 	border: 1px solid white;
 }
+#error_div{
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: var(--prim-bg-color);
+}
+#error_div div{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,0.7);
+}
+#error_div div content{
+	line-height: 1rem;
+	max-height: 100%;
+	max-width: 100%;
+	object-fit: contain;
 
+	border: none;
+	justify-items: center;
+	font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 0.8rem;
+    color: white;
+}
+#error_div div content span{
+    font-weight: 700;
+    font-size: 1.2rem;
+}
 #Restrict_div{
 	display: none;
 	height: 100vh;

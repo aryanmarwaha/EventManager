@@ -106,8 +106,7 @@ def scan_qr():
 				pts = pts.reshape((-1,1,2))
 				cv2.fillPoly(frame,[pts],high_color)
 
-
-
+		# setting image by calling js function via eel
 		frame = cv2.flip(frame,1)
 		_, buffer = cv2.imencode('.png', frame)
 		frame_bytes = base64.b64encode(buffer.tobytes()).decode('utf-8')
