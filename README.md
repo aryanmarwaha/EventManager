@@ -56,7 +56,7 @@ This guide will walk you through forking and cloning this particular project and
   - Activate the Virtual Environment:
 
     ```bash
-     ./venv/Scripts/activate.bat
+     .\venv\Scripts\activate.bat
     ```
   - Install dependencies:
     
