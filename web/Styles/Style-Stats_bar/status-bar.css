@@ -1,0 +1,44 @@
+@import "./status-manualPanel.css";
+@import "./status-charts.css";
+@import "./status-history.css";
+@import "./status-user-data.css";
+
+
+.stats-container{
+	grid-column-start: 2;
+	display: flex;
+	flex-direction: column;
+	height: var(--height1);
+}
+.stats-options{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 1rem 0px 1rem 0px;
+	border-bottom: 2px solid var(--second-bg-color);
+    color: var(--second-txt-color);
+}
+.stats-options .fa-solid{
+	margin: 0px 1rem 0px 1rem;
+	font-size: 1.5rem;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.stats-options .fa-solid:hover{
+    color: var(--highlight-txt-color);
+}
+#charts-button{
+	color: var(--highlight-txt-color);
+}
+
+.stats-header{
+	margin-top: 1rem;
+	display: flex;
+	justify-content: center;
+	width: 100%;
+	font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 2rem;
+    color: #20c997;
+}

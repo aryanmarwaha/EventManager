@@ -1,0 +1,62 @@
+#manual-panel::-webkit-scrollbar {
+	width: 5px;
+}
+#manual-panel::-webkit-scrollbar-thumb {
+  background-color: #5d606d;
+  border-radius: 0.375rem;
+}
+#manual-panel::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#manual-panel {
+    /* display: flex; */
+	display: none;
+	flex-direction: column;
+	width: calc(100%-2rem);
+	background-color: #2c2c2c;
+	cursor: default;
+	margin: 2rem 1rem 0px 1rem;
+	padding-bottom: 1rem;
+	align-items: center;
+	gap: 0.25rem;
+	overflow-y: scroll;
+    height: fit-content;
+}
+#manual-panel > form {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+/* manual-panel DIV */
+
+#manual-panel .name{
+	margin: 1.5rem 1rem 0px 1rem;
+	font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: white;
+}
+#manual-panel .value{
+	margin: 0.5rem 1rem 0px 1rem;
+	font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: darkslategrey;
+    overflow-x: scroll;
+    min-height: 1.5rem;
+}
+
+#manual-panel .button {
+    margin-top: 2.5rem;
+    border: 0;
+    border-radius: 0.25rem;
+    background-color: #5d606d;
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    height: fit-content;
+
+}

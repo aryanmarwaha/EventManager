@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@900&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/8d8afb07ae.js" crossorigin="anonymous"></script>
+
+	<link rel="stylesheet" type="text/css" href="./Styles/navigation.css">
+	<link rel="stylesheet" type="text/css" href="./Styles/main.css">
+	<link rel="stylesheet" type="text/css" href="./Styles/style.css">
+</head>
+<body class="">
+	<div class="nav">
+		<div class="child-1">
+			<div><i class="fa-solid fa-list-check"></i></div>
+			<div class="" id="Event_name">Dashboard : Designing the Perfect UI/UX: Insights and Frameworks</div>
+		</div>
+		<div class="child-2">
+			<button id="endSession" class="">End Session</button>
+			<img src="https://aryanmarwaha.me/static/favicon.svg" alt="Favicon">
+        </div>
+		</div>
+	</div>
+	<div class=" main">
+		<div class="cam-container">
+			<img id="cameraFeed">
+			<div id="cameraFeed-options" class="">
+				<label>Time Remaining : <span id="timeRemaining">-- hours : -- minutes</span> 🕜</label>
+				<button id="scan-button" onclick="start_scan()">Start Scan</button>
+				<button id="stop-scan-button" onclick="stop_scan()" style="display: none;">Stop Scan</button>
+			</div>
+			<div id="error_div">
+				<div>
+					<content align='center'>
+						<span>Close other apps</span>
+						<br><br>
+						It looks like another app is using the camera already.<br><br>If you need it, here's the error code:
+						<br>
+						0xA00F4243<CameraReservedByAnotherApp>(0xC00D3704)
+						<br><br>
+						<a href="https://answers.microsoft.com/en-us/windows/forum/all/error-code-0xa00f42430xc00d3704/3b2c1e80-c3c5-455a-92cf-58e8bd183378" target="blank"><button>Get help</button></a>
+						<button>Try again</button>
+					</content>
+				</div>
+			</div>
+		</div>
+		<div class="stats-container">
+			<div class="stats-options">
+				<div><i id="manual-button" class="fa-solid fa-keyboard"></i></div>
+				<div><i id="charts-button" class="fa-solid fa-chart-simple"></i></div>
+				<div><i id="history-button" class="fa-solid fa-clock-rotate-left"></i></div>
+			</div>			
+			<div id="stats-header-title" class="stats-header">Statistics</div>
+			
+            <div id="manual-panel" class="">   
+                <form>
+                    <div>
+                        <div class="name">Name</div>
+                        <input id="walkin-username" class="value" placeholder="user smith" required>
+                    </div>
+                    <div>
+                        <div class="name">Useremail</div>
+                        <input id="walkin-useremail" class="value" placeholder="user@gmail.com" required>
+                    </div>
+                    <div>
+                        <div class="name">Phone no.</div>
+                        <input id="walkin-phone" class="value" placeholder="(+91) 000-000-0000" required>
+                    </div>
+                    <button class="button">Register</button>
+                </form>
+                
+
+            </div>
+			<div id="stats-charts" class="">
+				<div id="attendees-chart" class="">
+					<label class="">Confirmations</label>
+					<div class="progress-ring" id="Confirmations"></div>
+				</div>
+				<div id="attendees-chart" class="">
+					<label class="">Venue Capacity</label>
+					<div class="progress-ring" id="Venue-capacity"></div>
+				</div>
+			</div>
+			
+			<div id="User-data">
+				<div id="User-img"><img></div>
+				<div id="User-name">Aryan Marwaha</div>
+				<div id="User-group-type">Student</div>
+				
+				<div class="name">TICKET NO.</div>
+				<input id="ticket" disabled class="value" value="0000-0000-0000">
+
+				<div class="name">EMAIL</div>
+				<input id="email" disabled class="value" value="aryanmarwaha78@gmail.com">
+
+				<div class="name">PHONE NO.</div>
+				<input id="phone" disabled class="value" value="0000-0000-0000">
+			</div>
+			
+			<div id="Past-commits">
+				<!-- <div class="commit-container" value="439429">
+					<div class="">Aryan Marwaha</div>
+					<div class="">Date-time : 19:21:21 - 12/12/23</div>
+				</div>
+				<div class="commit-container" value="439429">
+					<div class="">Aryan Marwaha</div>
+					<div class="">Date-time : 19:21:21 - 12/12/23</div>
+				</div>
+				<div class="commit-container" value="439429">
+					<div class="">Aryan Marwaha</div>
+					<div class="">Date-time : 19:21:21 - 12/12/23</div>
+				</div>
+				<div class="commit-container" value="439429">
+					<div class="">Aryan Marwaha</div>
+					<div class="">Date-time : 19:21:21 - 12/12/23</div>
+				</div> -->
+				
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+
+
+	<div id="Restrict_div">
+		<div>
+			<i class="fa-regular fa-circle-xmark"></i>
+			<content align='center'>Your screen width is too small to use this app.<br>To enjoy the app's user interface to its fullest, we advise using it in fullscreen mode.</content>
+		</div>
+	</div>
+	<script type="text/javascript" src="./eel.js"></script>
+	<script type="text/javascript" src="./Scripts/camFeed.js"></script>
+	<script type="text/javascript" src="./Scripts/statsBar.js"></script>
+	<script type="text/javascript" src="./Scripts/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* stats-charts */
+#stats-charts::-webkit-scrollbar {
+	width: 5px;
+}
+#stats-charts::-webkit-scrollbar-thumb {
+  background-color: #5d606d;
+  border-radius: 0.375rem;
+}
+#stats-charts::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+#stats-charts{
+    display: flex;
+	/* display: none; */
+	flex-direction: column;
+	width: calc(100% - 2rem);
+	background-color: #2c2c2c;
+	cursor: default;
+	margin: 2rem 1rem 0px 1rem;
+	padding-bottom: 1rem;
+	align-items: center;
+	gap: 2rem;
+	overflow-y: scroll;
+    
+    --confirmations-val: 100;
+    --venue-capacity-val: 100;
+    
+    --confirmation-chart-content: "-- / --";
+    --venue-chart-content: "-- / --";
+}
+#attendees-chart{
+	display: flex;
+	width: 14rem;
+	height: 14rem;
+	flex-direction: column;
+	align-items: center;
+}
+#attendees-chart :nth-child(1){
+	margin: 1rem 0px 0.5rem 0px;
+	justify-content: center;
+	font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1.2rem;
+    color: white;
+}
+.progress-ring{
+	margin-top: 0.5rem;
+	height: 10rem;
+	width: 10rem;
+	border: none;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+	font-size: 1.25rem;
+	color: white;
+
+}
+#Confirmations{
+	background: radial-gradient(closest-side, var(--prim-bg-color) 70%, transparent 0%),
+	conic-gradient(#20c997 calc(var(--confirmations-val) * 1%), var(--prim-bg-color) 0);
+}
+#Confirmations::before{
+	content: var(--confirmation-chart-content);
+}
+#Venue-capacity{
+	background: radial-gradient(closest-side, var(--prim-bg-color) 70%, transparent 0%),
+	conic-gradient(#20c997 calc(var(--venue-capacity-val) * 1%), var(--prim-bg-color) 0);
+}
+#Venue-capacity::before{
+	content: var(--venue-chart-content);
+}
