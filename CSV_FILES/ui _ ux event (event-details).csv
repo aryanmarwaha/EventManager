@@ -1,0 +1,2 @@
+eventID,eventName,eventStatus,startDatetime,endDatetime,admin,summary,venueName,venueCap,venueCurr,registeredCap,registeredCurr,importCSVRoute,exportCSVRoute
+1,ui / ux event,upcoming,2024-09-07 17:00:00,2024-09-08 17:00:00,Aryan,df dfb sdhfsfhdsbfkdsfdbfdbjdsfh  dsfkjdhbsafjbfjak f hdsbkfdsf,explotorium,200,0,21,0,test4.csv,

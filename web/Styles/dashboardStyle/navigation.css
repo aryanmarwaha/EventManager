@@ -1,0 +1,117 @@
+.nav {
+	grid-column-start: span 2;
+	display: flex;
+	height: 4rem;
+	justify-content: space-between;
+	align-items: center;
+	background-color: var(--prim-bg-color);
+	border-bottom: 2px solid #363636;
+    width: calc(100% - 4rem);
+    padding: 0px 2rem 0px 2rem;
+    
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    color: #D7D7D7;
+
+    -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+}
+.nav > .child-1 > div {
+	display: flex;
+	justify-content: left;
+	align-items: center;
+    gap: 0.8rem;
+}
+.nav > .child-2 {
+    display: flex;
+    gap: 1rem;
+}
+.nav > .child-2 > div {
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+    width: 4rem;
+}
+.nav > .child-2 > .active {
+    /* font-weight: 700; */
+    color: white;
+    padding-bottom: 0.3rem;
+    border-bottom: 0.1rem solid white;
+}
+.nav .child-3 {
+	display: flex;
+    width: 15rem;
+	justify-content: right;
+	align-items: center;
+	gap: 2rem;
+}
+.nav > .child-1 > div > .signButton {
+    padding: 0;
+    padding: 0.4rem 0rem 0.4rem 0rem;
+    width: 7rem;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    /* height: 2.5rem; */
+
+    border-radius: 0.4rem;
+    background-color: transparent;
+    color: #20c997;
+    border: 0.1rem solid #20c997;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+.nav > .child-1 > div > .active {
+    background-color: #20c997;
+    color: white;
+}
+.nav > .child-1 > div > .signButton:hover {
+    background-color: #148563;
+    border-color: #148563;
+    color: white;
+}
+.nav > .child-1 .user-img > img {
+    height: 2.5rem;
+    width: 2.5rem;
+    border-radius: 50%;
+}
+#user-greeting {
+    font-weight: 600;
+    color: #D7D7D7;
+}
+
+
+.nav .child-3 img {
+    /* font-size: 2rem; */
+    display: inline-block;
+    height: 2.2rem;
+	/* color: var(--second-txt-color); */
+}
+/* #user-img {
+	height: 2.75rem;
+	width: 2.75rem;
+	border: 2px solid darkslategrey;
+	border-radius: 50%;
+	/* overflow: hidden; */
+	/* background-image: url('./../Static/user_img.png');
+    } */
+    .child-1 .fa-list-check {
+        font-size: 2rem;
+        height: auto;
+        margin-left: 1.5rem;
+        color: var(--second-txt-color);
+        cursor: pointer;
+    }
+    .child-1 .fa-list-check:hover {
+        color: var(--prim-txt-color);
+        transition: 0.2s ease-in-out;
+    }
+    #Event_name {
+        margin-left: 2rem;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 600;
+        font-size: 1.5rem;
+        color: lavender;
+        padding-right: 2rem;
+    }

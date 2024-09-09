@@ -1,4 +1,5 @@
 @import "./Style-Stats_bar/status-bar.css";
+@import "./navigation.css";
 
 .main{
 	width: 100%;

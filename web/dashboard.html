@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title></title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/8d8afb07ae.js"
+            crossorigin="anonymous"
+        ></script>
+
+        <link rel="stylesheet" type="text/css" href="./Styles/style.css" />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Styles/dashboardStyle/dashboard.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Styles/dashboardStyle/scheduleEvent.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Styles/dashboardStyle/instance-details.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Styles/dashboardStyle/instance-control.css"
+        />
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="/Styles/dashboardStyle/instance-registration-participation.css"
+        />
+    </head>
+    <body class="">
+        <div class="nav">
+            <div class="child-1">
+                <div class="" id="signDiv" style="display: none">
+                    <button class="signButton">Sign up</button>
+                    <button class="signButton active">Sign in</button>
+                </div>
+                <div class="" id="signedDiv">
+                    <div class="user-img">
+                        <i
+                            class="fa-solid fa-user"
+                            style="color: #20c997; font-size: 1.4rem"
+                        ></i>
+                    </div>
+                    <div id="user-greeting">Hi Aryan ! ⭐⭐</div>
+                </div>
+            </div>
+            <div class="child-2">
+                <div class="active">Home</div>
+                <div class="">About</div>
+                <div class="">Faq's</div>
+                <div class="">Report</div>
+            </div>
+            <div class="child-3">
+                <!-- <button id="endSession" class="">End Session</button> -->
+                <img
+                    src="https://aryanmarwaha.me/static/favicon.svg"
+                    alt="Favicon"
+                    id="promoMe"
+                />
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="options-tab">
+                <button id="createNewEvent">
+                    Schedule Event &nbsp&nbsp<i class="fa-solid fa-plus"></i>
+                </button>
+                <button class="active" id="overviewButton">
+                    <i class="fa-solid fa-chart-pie"></i><span>Overview</span>
+                </button>
+                <button class="" id="runningButton">
+                    <i class="fa-solid fa-chart-simple"></i><span>Running</span>
+                </button>
+                <button class="" id="upcommingButton">
+                    <i class="fa-regular fa-clock"></i><span>Upcoming</span>
+                </button>
+                <button class="" id="historyButton">
+                    <i class="fa-solid fa-clock-rotate-left"></i
+                    ><span>History</span>
+                </button>
+                <!-- <button class=""><i class="fa-solid fa-chart-pie"></i><span>Overview</span></button> -->
+
+                <div class="advertisement">
+                    <img src="./Static/advertisement2.png" />
+                </div>
+            </div>
+            <div class="main">
+                <div id="main-content" class="">
+                    <div class="headerBar">
+                        <header>
+                            Instances <span id="instanceNo">( 0 )</span>
+                        </header>
+                        <div class="right">
+                            <input
+                                type="text"
+                                placeholder="search-box"
+                                id="searchBox"
+                            />
+                            <i
+                                class="fa-solid fa-magnifying-glass"
+                                id="searchEventListButton"
+                            ></i>
+                            <span></span>
+                            <button id="refreshEventListButton" onclick="(()=>clearInstanceDetailPanel())()">
+                                <i class="fa-solid fa-rotate-right"></i>
+                            </button>
+                            <button><i class="fa-solid fa-gear"></i></button>
+                            <!-- <button>expand view</button> -->
+                            <!-- <button><i class="fa-solid fa-rotate-right"></i></button> -->
+                        </div>
+                    </div>
+                    <div id="instance-table">
+                        <div class="noEventsToShowFor"></div>
+                        <!-- <div class="instance-table-row">
+                            <input type="checkbox" style="visibility: hidden;">
+                            <div class="instance-table-data">Event-Name</div>
+                            <div class="instance-table-data">EventID</div>
+                            <div class="instance-table-data">Status</div>
+                            <div class="instance-table-data">datetime</div>
+                            <div class="instance-table-data">Admin</div>
+                            <div class="instance-table-data">Options</div>
+                        </div> -->
+                        <!-- ACTUALL DATA -->
+                        <!-- <div class="instance-table-row">
+                            <input type="radio" name="instance">
+                            <div class="instance-table-data">overseer launch event sdfhdsfh</div>
+                            <div class="instance-table-data">00235535435435fkjnfjknfjkj</div>
+                            <div class="instance-table-data">Upcoming</div>
+                            <div class="instance-table-data">19-08-2023</div>
+                            <div class="instance-table-data">Aryan</div>
+                            <div class="instance-table-data">
+                                <div class="instance-action-buttons">
+                                    <button>Start</button>
+                                    <button>Resume</button>
+                                    <button>End Session</button>
+                                </div>
+                            </div>
+                        </div> -->
+                    </div>
+                    <div id="instance-detail-panel">
+                        <i class="fa-solid fa-equals" id="instance-detail-panel-resize-button"></i>
+                        <div id="instance-details" class="">
+                            <header> Select an instance </header>
+                            <div id="instance-flash-message" style="display: none">
+                                <button>discard changes</button>
+                                <button class="active">save changes</button>
+                            </div>
+                        </div>
+                        <div class="instance-panel-main">
+                            <div class="options-container">
+                                <div class="able active">Event Details</div>
+                                <span></span>
+                                <div class="able">Event Controls</div>
+                                <span></span>
+                                <div class="able">Registration List</div>
+                                <span></span>
+                                <div class="">Participantion List</div>
+                            </div>
+                            <div id="instanceDetailGrid" style="display: none;">
+                                <div class="data-block" style="display: none;">
+                                    <div>Instance <i class="fa-solid fa-pen-to-square"></i></div>
+                                    <textarea disabled>No data to show.</textarea>
+                                </div>
+                                <div class="column">
+                                </div>
+                                <div class="column"></div>
+                                <div class="column"></div>
+                            </div>
+                            <div id="instanceControlDiv" style="display: none;">
+                                <!-- <div class="header"><i class="fa-solid fa-caret-right active"></i>Session controls</div>
+                                <div class="controls">
+                                    <button>start session</button>
+                                    <button>end session</button>
+                                    <button>resume session</button>
+                                </div>
+                                <div class="header"><i class="fa-solid fa-caret-right active"></i>Export details</div>
+                                <div class="controls">
+                                    <button>Event details</button>
+                                    <button>Registration List</button>
+                                    <button>Participation List</button>
+                                </div>
+                                <div class="header"><i class="fa-solid fa-caret-right active"></i>Other options</div>
+                                <div class="controls">
+                                    <button>Delete event</button>
+                                </div> -->
+                            </div>
+                            <div id="instance-registration-participation-listDiv" style="display: none;">
+                                <!-- <div class="search-box-container">
+                                    <div class="search-box">
+                                        <input type="text" placeholder="search-box" onchange="">
+                                        <i class="fa-solid fa-magnifying-glass"></i>
+                                    </div>
+                                    <div class="pagerate-limiter">
+                                        <i class="fa-solid fa-chevron-left"></i>
+                                        <div>1</div>
+                                        <i class="fa-solid fa-chevron-right able"></i>
+                                    </div>
+                                </div>
+                                <div class="rpListTable">
+                                    <div class="row">
+                                        <div class="data"><p>participantID</p></div>
+                                        <div class="data"><p>firstname</p></div>
+                                        <div class="data"><p>secondname</p></div>
+                                        <div class="data"><p>email</p></div>
+                                    </div>
+                                    <div class="row notfound">
+                                        <p>No results found associated to this event.</p>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="overlay"></div>
+        <div class="scheduleEventContainer" id="scheduleEventContainer">
+            <div id="step-1">
+                <div class="form1">
+                    <form onsubmit="return false">
+                        <div class="headerDiv1">
+                            <div class="">
+                                <i class="fa-solid fa-arrow-left" id="close-scheduleEventContainer"></i></div
+                            >Setup A New Event
+                        </div>
+                        <div class="intro1">
+                            Kindly complete the details to kickstart a new event
+                            experience.
+                        </div>
+                        <div class="inputField1">
+                            <div>Event Name*</div>
+                            <input type="text" id="eventName" placeholder="" required />
+                        </div>
+                        <div class="inputField1">
+                            <div>Venue Name*</div>
+                            <input type="text" id="venueName" placeholder="" required />
+                        </div>
+                        <div class="inputField1">
+                            <div>Venue Capacity*</div>
+                            <input type="number" id="venueCap" placeholder="" required />
+                        </div>
+                        <div class="inputField2">
+                            <div>Summary</div>
+                            <textarea id="summary" placeholder=""></textarea>
+                        </div>
+
+                        <div class="inputField3">
+                            <div>Start Datetime*</div>
+                            <input type="datetime-local" id="startDatetime" placeholder="" required />
+                        </div>
+                        <div class="inputField3">
+                            <div>End Datetime*</div>
+                            <input type="datetime-local" id="endDatetime" placeholder="" required />
+                        </div>
+                        
+                        <div class="inputField4">
+                            <div>Import Participant List (CSV format)*</div>
+                            <input type="file" id="importParticipantsCSVRoute" placeholder="" required title="note* you can download the participant-list in (csv format) and then select the path to it."/>
+                        </div>
+                        <div class="inputField4">
+                            <div>Export Participant List (CSV format)</div>
+                            <input type="file" id="exportParticipantsCSVRoute" placeholder="" title="If you do not select the export path, the system will automatically create a file named (<event-ID>.csv)"/>
+                        </div>
+                        <div class="buttonDiv">
+                            <button class="" id="cancel-create-event-button">cancel</button>
+                            <button class="active" id="create-event-button">do it !</button>
+                        </div>
+                    </form>
+
+                </div>
+                <div class="advertisement_2">
+                    <img src="./Static/drinkingCoffee.png" />
+                    <p>
+                        Plan, Sip, and Succeed – Your Event Journey Starts with
+                        a Cup of Coffee!
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div id="popup-container">
+            <!-- <div class="popup-element">
+                <div class="header">
+                    <div class="title">✅ Warning</div>
+                    <button><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <span></span>
+                <div class="message-body">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing.
+                </div>
+            </div> -->
+        </div>
+        <div id="Restrict_div">
+            <div>
+                <i class="fa-regular fa-circle-xmark"></i>
+                <content align="center"
+                    >Your screen width is too small to use this app.<br />To
+                    enjoy the app's user interface to its fullest, we advise
+                    using it in fullscreen mode.</content
+                >
+            </div>
+        </div>
+        <script type="text/javascript" src="./eel.js"></script>
+        <script type="text/javascript" src="./Scripts/index.js"></script>
+        <script type="text/javascript" src="./Scripts/instance-details.js"></script>
+        <script type="text/javascript" src="./Scripts/dashboard.js"></script>
+        
+    </body>
+</html>

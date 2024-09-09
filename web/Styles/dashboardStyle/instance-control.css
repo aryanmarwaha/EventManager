@@ -1,0 +1,66 @@
+#instanceControlDiv {
+    margin-top: 2rem;
+    width: calc(100% - 2rem);
+    
+    /* border: 1px solid orange; */
+    display: flex;
+    flex-direction: column;
+
+    font-family: 'poppins', sans-serif;
+    color: #717171;
+    font-size: 1rem;
+    font-weight: 400;
+    row-gap: 1rem;
+    align-items: flex-start;
+}
+#instanceControlDiv > .header {
+    width: 100%;
+    /* height: 1.2rem; */
+    /* border: 1px solid orange; */
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    color: #d7d7d7;
+    cursor: pointer;
+}
+#instanceControlDiv > .header > i {
+    font-size: 1.2rem;
+    transition: all 0.2s linear;
+}
+#instanceControlDiv > .header > .active {
+    transform: rotate(90deg);
+}
+#instanceControlDiv > .header:hover {
+    /* color: #90c9f8; */
+    color: white;
+}
+
+#instanceControlDiv > .controls {
+    display: flex;
+    /* margin-top: 1rem; */
+    margin-bottom: 1rem;
+    width: 100%;
+    /* height: 10rem; */
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+#instanceControlDiv > .controls > button {
+    flex-grow: 0;
+    flex-shrink: 0;
+    all: unset;
+    padding: 0.3rem 1.2rem 0.3rem 1.2rem;
+    /* border: 1px solid #d7d7d7; */
+    background-color: #2f3038;
+    /* color: #1f1f24; */
+    color: #d7d7d7;
+    border-radius: 0.273rem;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+#instanceControlDiv > .controls > button:hover {
+    background-color: #363636;
+    /* color: white; */
+}

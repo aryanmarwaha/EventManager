@@ -9,20 +9,22 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@900&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/8d8afb07ae.js" crossorigin="anonymous"></script>
+    
 
-	<link rel="stylesheet" type="text/css" href="./Styles/navigation.css">
-	<link rel="stylesheet" type="text/css" href="./Styles/main.css">
+    
+	<link rel="stylesheet" type="text/css" href="./Styles/evenAttendanceStyle/main.css">
 	<link rel="stylesheet" type="text/css" href="./Styles/style.css">
+
 </head>
 <body class="">
 	<div class="nav">
 		<div class="child-1">
 			<div><i class="fa-solid fa-list-check"></i></div>
-			<div class="" id="Event_name">Dashboard : Designing the Perfect UI/UX: Insights and Frameworks</div>
+			<div class="" id="Event_name">Event Name</div>
 		</div>
 		<div class="child-2">
-			<button id="endSession" class="">End Session</button>
-			<img src="https://aryanmarwaha.me/static/favicon.svg" alt="Favicon">
+			<button id="endSession" class="" onclick="(()=>{stop_scan(); eel.pauseEvent()})()">Stop Session</button>
+			<img src="https://aryanmarwaha.me/static/favicon.svg" alt="Favicon" id="promoMe">
         </div>
 		</div>
 	</div>
@@ -71,7 +73,7 @@
                         <div class="name">Phone no.</div>
                         <input id="walkin-phone" class="value" placeholder="(+91) 000-000-0000" required>
                     </div>
-                    <button class="button">Register</button>
+                    <button type="submit" class="button">Register</button>
                 </form>
                 
 
@@ -89,8 +91,8 @@
 			
 			<div id="User-data">
 				<div id="User-img"><img></div>
-				<div id="User-name">Aryan Marwaha</div>
-				<div id="User-group-type">Student</div>
+				<div id="User-name"></div>
+				<div id="User-group-type"></div>
 				
 				<div class="name">TICKET NO.</div>
 				<input id="ticket" disabled class="value" value="0000-0000-0000">
@@ -102,25 +104,7 @@
 				<input id="phone" disabled class="value" value="0000-0000-0000">
 			</div>
 			
-			<div id="Past-commits">
-				<!-- <div class="commit-container" value="439429">
-					<div class="">Aryan Marwaha</div>
-					<div class="">Date-time : 19:21:21 - 12/12/23</div>
-				</div>
-				<div class="commit-container" value="439429">
-					<div class="">Aryan Marwaha</div>
-					<div class="">Date-time : 19:21:21 - 12/12/23</div>
-				</div>
-				<div class="commit-container" value="439429">
-					<div class="">Aryan Marwaha</div>
-					<div class="">Date-time : 19:21:21 - 12/12/23</div>
-				</div>
-				<div class="commit-container" value="439429">
-					<div class="">Aryan Marwaha</div>
-					<div class="">Date-time : 19:21:21 - 12/12/23</div>
-				</div> -->
-				
-			</div>
+			<div id="Past-commits"></div>
 		</div>
 	</div>
 
@@ -128,7 +112,19 @@
 
 
 
-
+    <div id="popup-container">
+        <!-- <div class="popup-element">
+            <div class="header">
+                <div class="title">✅ Warning</div>
+                <button><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <span></span>
+            <div class="message-body">
+                Lorem ipsum dolor, sit amet consectetur adipisicing.
+            </div>
+        </div> -->
+        
+    </div>
 
 	<div id="Restrict_div">
 		<div>
@@ -136,9 +132,13 @@
 			<content align='center'>Your screen width is too small to use this app.<br>To enjoy the app's user interface to its fullest, we advise using it in fullscreen mode.</content>
 		</div>
 	</div>
-	<script type="text/javascript" src="./eel.js"></script>
+    <script type="text/javascript" src="/eel.js"></script>
+    <script type="text/javascript" src="./Scripts/index.js"></script>
 	<script type="text/javascript" src="./Scripts/camFeed.js"></script>
 	<script type="text/javascript" src="./Scripts/statsBar.js"></script>
 	<script type="text/javascript" src="./Scripts/main.js"></script>
+    <script>
+        window.onbeforeunload = stop_scan();
+    </script>
 </body>
 </html>

@@ -20,6 +20,8 @@
 	flex-direction: column;
     overflow-y: scroll;
     max-height: 60vh;
+    flex-grow: 0;
+    flex-shrink: 0;
 }
 
 .commit-container{

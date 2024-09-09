@@ -1,30 +1,142 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title></title>
-	
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@900&display=swap" rel="stylesheet">
-	<script src="https://kit.fontawesome.com/8d8afb07ae.js" crossorigin="anonymous"></script>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title></title>
 
-	<link rel="stylesheet" type="text/css" href="./Styles/navigation.css">
-	<link rel="stylesheet" type="text/css" href="./Styles/main.css">
-	<link rel="stylesheet" type="text/css" href="./Styles/style.css">
-</head>
-<body class="">
-	
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Roboto:wght@900&display=swap"
+            rel="stylesheet"
+        />
+        <script
+            src="https://kit.fontawesome.com/8d8afb07ae.js"
+            crossorigin="anonymous"
+    ></script>
+        
+        <link
+            rel="stylesheet"
+            type="text/css"
+            href="./Styles/landingStyle/main.css"
+        />
+        <link rel="stylesheet" type="text/css" href="./Styles/style.css" />
+        <link rel="stylesheet" type="text/css" href="/Styles/landingStyle/signing.css" />
+        <link rel="stylesheet" type="text/css" href="/Styles/landingStyle/responsive.css" />
+        
+    </head>
+    <body>
+        <div class="nav">
+            <div class="child-1">
+                <div  id="signDiv">
+                    <button class="signButton"  onclick="openTermsAndConditions()">Sign up</button>
+                    <button class="signButton active" onclick="openSignIn()">Sign in</button>
+                </div>
+                <div  id="signedDiv" style="display: none;">
+                    <div class="user-img">
+                        <img src="https://aryanmarwaha.me/static/me_img.png">
+                    </div>
+                    <div id="user-greeting">Hi Aryan !</div>
+                </div>
+            </div>
+            <div class="child-2">
+                <div class="active">Home</div>
+                <div>About</div>
+                <div>Faq's</div>
+                <div>Report</div>
+            </div>
+            <div class="child-3">
+                <!-- <button id="endSession">End Session</button> -->
+                <img
+                    src="https://aryanmarwaha.me/static/favicon.svg"
+                    alt="Favicon"
+                    id="promoMe"
+                    title="Know more about the developer"
+                />
+            </div>
+        </div>
 
-	<div id="Restrict_div">
-		<div>
-			<i class="fa-regular fa-circle-xmark"></i>
-			<content align='center'>Your screen width is too small to use this app.<br>To enjoy the app's user interface to its fullest, we advise using it in fullscreen mode.</content>
-		</div>
-	</div>
-	<script type="text/javascript" src="./eel.js"></script>
-	<script type="text/javascript" src="./Scripts/camFeed.js"></script>
-	<script type="text/javascript" src="./Scripts/main.js"></script>
-</body>
+        <div class="content">
+            <div class="platform-overview">
+                <div>Over<span>Seer</span></div>
+                <p>Simplify event planning with an all-in-one app that lets you manage attendees, choose venues, and send invitations effortlessly, ensuring a seamless and stress-free experience from start to finish.</p>
+                <button onclick="openSignIn()">Get Started</button>
+                <div class="demoDiv">
+                    <div class="monitor">
+                        <img src="./Static/demoImg.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="overlay"></div>
+        <div class="signBox" id="signingContainer">
+            <div id="signingBox">
+                <div class="Advertise_Box">
+                    <img src="./Static/image_001.png">
+                    <p>manage your event tickets, sales, and attendees with our seamless and intuitive platform.</p>
+                </div>
+                <span class="divider"></span>
+                
+                <!-- Sign in -->
+                <form class="form" id="signIn" onsubmit="return false">
+                    <header>Sign in</header>
+                    <p>Let’s get started with a quick user Sign in.</p>
+                    <input type="email" placeholder="you're email@address" class="e" required id="signin-useremail">
+                    <input type="password" placeholder="password"  required id="signin-password">
+                    <button  id="signin">Log in</button>
+                    or <a onclick="openTermsAndConditions()">new user ?</a>
+                </form>
+                
+                <!-- Sign up -->
+                <form class="form" id="signUp" onsubmit="return false">
+                    <header>Sign up</header>
+                    <p>Let’s get you started with a quick Sign up.</p>
+                    <input type="email" placeholder="email@address" class="e" required id="signup-useremail">
+                    <input type="text" placeholder="user-name"  required id="signup-username">
+                    <input type="password" placeholder="set-password"  required minlength="6" id="signup-password">
+                    <button  id="signup">Register</button>
+                    or <a onclick="openSignIn()">already have an account ?</a>
+                </form>
+            </div>
+            <div id="termsAndConditions">
+                <header>Terms and Conditions</header>
+                <p>By using the Event Manager app, you agree to our terms and conditions. These include your responsibility to provide accurate information, maintain the security of your account, and respect the privacy of other users. We reserve the right to modify or terminate our services at any time without prior notice. Your data will be handled in accordance with our privacy policy, and any misuse of the app or violation of these terms may result in the suspension of your account. Please review these terms regularly to stay informed of any updates.</p>
+                <div>
+                    <button class="active" onclick="openSignUp()">Agree and continue</button>
+                    <button  onclick="resetScreen()">Reject All</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="popup-container">
+            <!-- <div class="popup-element">
+                <div class="header">
+                    <div class="title">✅ Warning</div>
+                    <button><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <span></span>
+                <div class="message-body">
+                    Lorem ipsum dolor, sit amet consectetur adipisicing.
+                </div>
+            </div> -->
+            
+        </div>
+
+
+        <div id="Restrict_div">
+            <div>
+                <i class="fa-regular fa-circle-xmark"></i>
+                <content align="center"
+                >Your screen width is too small to use this app.<br />To
+                    enjoy the app's user interface to its fullest, we advise
+                    using it in fullscreen mode.</content
+            >
+            </div>
+        </div>
+        <script type="text/javascript" src="./eel.js"></script>
+        <script type="text/javascript" src="./Scripts/index.js"></script>
+        <script type="text/javascript" src="./Scripts/indexLogic.js"></script>
+    </body>
 </html>

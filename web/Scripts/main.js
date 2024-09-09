@@ -30,12 +30,16 @@ function setVenueContent(data1,data2) {
 
 eel.expose(initializeMyAppUI);
 function initializeMyAppUI(data) {
+    console.log(data)
     setEventName(data.eventName);
     setRegistrationEndsIn(data.registrationEndTimeStamp);
     setConfirmationContent(data.confirmationCurr, data.confirmationCap);
     setVenueContent(data.venueCurr, data.venueCap);
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-    eel.test();
-});
+document.addEventListener('DOMContentLoaded', eel.fetchScannerConfig())
+
+eel.expose(closeEventScannerHelper)
+function closeEventScannerHelper() {
+    window.close()
+}

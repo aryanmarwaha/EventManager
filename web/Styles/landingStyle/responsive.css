@@ -1,0 +1,17 @@
+/* media Queries */
+
+@media only screen and (max-width: 900px){
+	.nav{
+		display: none;
+	}
+	.content{
+		display: none;
+	}
+	.overlay{
+		display: flex;
+	}
+    .signBox{
+        display: none;
+    }
+	
+}

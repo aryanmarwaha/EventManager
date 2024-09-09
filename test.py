@@ -1,16 +1,24 @@
-import json, rsa, base64
-import pyqrcode, png
+import jwt, base64, qrcode, io
+from PIL import Image
 
-public_key = rsa.PublicKey(6791411563309788692375731531390914535781035359523789213798071484996582439897712163526989636434352260105784013157625495637229271893289766016493804846999373, 65537)
+secretKey = "ksjkasjcskfbdsfhdshklfP22EC2x380lZ1"
 
-# data = {"ticket":"2345678","key": "1234567890"}
-data= "this is nagpal."
-# data["key"] = rsa.encrypt(data["key"].encode(),public_key)
-# data["key"] = base64.b64encode(data["key"]).decode('utf-8')
+payload = {
+    'user_id': 123,
+    'eventID': 231
+}
+token = jwt.encode(payload, secretKey, algorithm='HS256')
 
-# data = json.dumps(data)
+qr = qrcode.QRCode(version=1, box_size=10, border=4)
+qr.add_data(token)
+qr.make(fit=True)
 
-qrcode = pyqrcode.create(data)
-qrcode.png("qr-code.png", scale=8)
+# Create an image from the QR code
+img = qr.make_image(fill='black', back_color='white')
 
-# data["key"] = base64.b64decode(data["key"].encode('utf-8'))
+buffer = io.BytesIO()
+img.save(buffer, format="PNG")
+img_bytes = buffer.getvalue()
+
+base64_encoded_image = base64.b64encode(img_bytes).decode('utf-8')
+imgString = "data:image/png;base64, " + base64_encoded_image
